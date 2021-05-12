@@ -1,4 +1,12 @@
 .form {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  margin: auto;
+}
+.button {
+  background-color: lightblue;
+}
+input {
+  margin: 5px;
 }
