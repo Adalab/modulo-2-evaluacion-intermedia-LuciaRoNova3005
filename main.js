@@ -7,12 +7,10 @@ const numberInput = document.querySelector(".js-number");
 
 const help = document.querySelector(".js-help");
 const button = document.querySelector(".js-button");
-const numberTry = document.querySelector(".js-count").value;
-
-console.log(numberTry + 1);
 
 function handelcount() {
-  return numberTry + 1;
+  const numberTry = document.querySelector(".js-count").value;
+  return numberTry = ${numbreTry} + 1;
 }
 
 function handelplay() {
