@@ -4,12 +4,19 @@ function getRandomNumber(max) {
 }
 const number = getRandomNumber(100);
 const numberInput = document.querySelector(".js-number");
-const numberInputValue = numberInput.value;
+
 const help = document.querySelector(".js-help");
 const button = document.querySelector(".js-button");
-const numberTry = document.querySelector(".js-count");
+const numberTry = document.querySelector(".js-count").value;
+
+console.log(numberTry + 1);
+
+function handelcount() {
+  return numberTry + 1;
+}
 
 function handelplay() {
+  const numberInputValue = numberInput.value;
   if (numberInputValue > number) {
     return (help.value = "Demasiado alto");
   } else if (numberInputValue < number) {
@@ -20,3 +27,4 @@ function handelplay() {
 }
 
 button.addEventListener("click", handelplay);
+//numberInput.addEventListener("change", handelcount);
