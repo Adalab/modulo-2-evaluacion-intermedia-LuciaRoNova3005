@@ -1,20 +1,28 @@
 "use script";
+const numberInput = document.querySelector(".js-number");
+const acumulator = document.querySelector(".js-count");
+const help = document.querySelector(".js-help");
+const button = document.querySelector(".js-button");
+
 function getRandomNumber(max) {
   return Math.ceil(Math.random() * max);
 }
 const number = getRandomNumber(100);
-const numberInput = document.querySelector(".js-number");
-
-const help = document.querySelector(".js-help");
-const button = document.querySelector(".js-button");
-
-function handelcount() {
-  const numberTry = document.querySelector(".js-count").value;
-  return numberTry = ${numbreTry} + 1;
+let cont = 0;
+function count() {
+  cont++;
+  acumulator.value = `Número de intentos: ${cont}`;
+}
+function handelclick() {
+  play();
+  count();
 }
 
-function handelplay() {
+function play() {
   const numberInputValue = numberInput.value;
+  if (numberInput.value < 1 || numberInput.value > 100) {
+    return (help.value = "El número debe estar entre 1 y 100");
+  }
   if (numberInputValue > number) {
     return (help.value = "Demasiado alto");
   } else if (numberInputValue < number) {
@@ -24,5 +32,4 @@ function handelplay() {
   }
 }
 
-button.addEventListener("click", handelplay);
-//numberInput.addEventListener("change", handelcount);
+button.addEventListener("click", handelclick);
