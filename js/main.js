@@ -20,7 +20,7 @@ function handelclick() {
 
 function play() {
   const numberInputValue = numberInput.value;
-  if (numberInput.value < 1 || numberInput.value > 100) {
+  if (numberInput.value < 1 || help.value > 100) {
     return (help.value = "El número debe estar entre 1 y 100");
   }
   if (numberInputValue > number) {
